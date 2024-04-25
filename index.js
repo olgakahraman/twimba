@@ -38,3 +38,8 @@ function getFeedHtml() {
 }
 
 getFeedHtml();
+
+function render(){
+    document.querySelector("#feed").innerHTML = getFeedHtml();
+}
+render();
