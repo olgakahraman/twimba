@@ -1,16 +1,22 @@
+
 import { tweetsData } from "./data.js";
 
-const tweetInput = document.getElementById('tweet-input');
-const tweetBtn = document.getElementById('tweet-btn');
+const tweetInput = document.getElementById("tweet-input");
+const tweetBtn = document.getElementById("tweet-btn");
 
-tweetBtn.addEventListener('click', function(){
-    console.log(tweetInput.value);
-})
+tweetBtn.addEventListener("click", function () {
+  console.log(tweetInput.value);
+});
+
+document.addEventListener('click', function(e){
+    console.log('like', e.target.dataset.like)
+    console.log('retweet', e.target.dataset.retweet)
+});
 
 function getFeedHtml() {
   let feedHtml = ``;
 
-  tweetsData.forEach(function(tweet) {
+  tweetsData.forEach(function (tweet) {
     feedHtml += `
 <div class="tweet">
     <div class="tweet-inner">
@@ -38,14 +44,13 @@ function getFeedHtml() {
         </div>            
     </div>
 </div>`;
-  })
+  });
   return feedHtml;
-
 }
 
 getFeedHtml();
 
-function render(){
-    document.querySelector("#feed").innerHTML = getFeedHtml();
+function render() {
+  document.querySelector("#feed").innerHTML = getFeedHtml();
 }
 render();
