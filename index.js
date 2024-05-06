@@ -18,13 +18,21 @@ function handleLikeClick(tweetId) {
     return tweet.uuid === tweetId;
   })[0];
 
-  if (targetTweetObj.isLiked) {
-    targetTweetObj.likes--;
-    targetTweetObj.isLiked = false;
-  } else {
-    targetTweetObj.likes++;
-    targetTweetObj.isLiked = true;
-  }
+  // if (targetTweetObj.isLiked) {
+  //   targetTweetObj.likes--;
+  //   targetTweetObj.isLiked = false;
+  // } else {
+  //   targetTweetObj.likes++;
+  //   targetTweetObj.isLiked = true;
+  // }
+if (targetTweetObj.isLiked) {
+  targetTweetObj.likes--;
+  
+} else {
+  targetTweetObj.likes++;
+  
+}
+  targetTweetObj.isLiked = !targetTweetObj.isLiked;
   render();
 }
 
